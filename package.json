@@ -18,7 +18,9 @@
     "build:client": "cross-env NODE_ENV=production webpack --config webpack.config.js",
     "build:server": "babel src/server -d dist/server",
     "build": "npm-run-all build:*",
-    "start": "./node_modules/.bin/babel-node dist/server/index.js"
+    "start": "./node_modules/.bin/babel-node dist/server/index.js",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "author": "Sean Smith",
   "license": "MIT",
@@ -84,6 +86,8 @@
     "redux": "^3.6.0",
     "redux-thunk": "^2.1.0",
     "uuid-v4": "^0.1.0",
-    "validator": "^6.1.0"
-  }
+    "validator": "^6.1.0",
+    "snyk": "^1.316.1"
+  },
+  "snyk": true
 }
